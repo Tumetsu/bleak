@@ -914,6 +914,7 @@ body {
 		.header-description {
 			color: #fff;
 
+
 			&:after {
 				background: #fff;
 			}
@@ -954,7 +955,7 @@ body {
 
 		span {
 			font-weight: 400;
-			color: $color-gray-40;
+			color: $color-gray-97;
 			margin-right: 1em;
 
 			a {
@@ -1142,6 +1143,10 @@ body {
 		padding: 4em 0 0;
 		margin-bottom: 3em;
 	}
+}
+
+.post-body {
+	padding-top: 3em;
 }
 
 
