@@ -18,8 +18,24 @@
             {{#if @blog.description}}
                 <span class="header-description">{{@blog.description}}</span>
             {{/if}}
-
         </a>
+
+        <div class="social-media">
+            <a href="https://twitter.com/tumetsu" onclick="window.open(this.href);return false;">
+                <i class="fa fa-twitter"></i>
+            </a>
+
+            <a href="https://www.github.com/tumetsu" onclick="window.open(this.href);return false;">
+                <i class="fa fa-github"></i>
+            </a>
+
+            <a href="https://fi.linkedin.com/in/salmituomas" onclick="window.open(this.href);return false;">
+                <i class="fa fa-linkedin"></i>
+            </a>
+
+
+        </div>
+
     </div>
     {{#if @blog.cover}}
         <div class="header-cover" style="background-image: url({{@blog.cover}})"></div>

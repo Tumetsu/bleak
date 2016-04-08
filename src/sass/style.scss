@@ -883,6 +883,36 @@ body {
 		}
 	}
 
+	.social-media {
+		padding-top: 0.2em;
+		margin: auto;
+		width: 100%;
+		font-family: 'Helvetica Neue', sans-serif;
+		display: block;
+		text-align: center;
+		color: #fff;
+		position: relative;
+
+		a {
+			color: #fff;
+		}
+
+		a:visited {
+			color: #fff;
+		}
+
+		a:hover {
+			color: $color-gray-65;
+		}
+
+		.fa {
+			letter-spacing: 2px;
+			color: inherit;
+		}
+
+
+	}
+
 	&.has-cover {
 
 		.header-name {
@@ -908,6 +938,8 @@ body {
 			background: $color-gray-85;
 		}
 	}
+
+
 
 	&.has-cover {
 
@@ -1489,6 +1521,9 @@ body {
 			}
 			&.icon-gplus {
 				background-color: #d14836;
+			}
+			&.icon-linkedin {
+				background-color: #00a0dc;
 			}
 		}
 	}
