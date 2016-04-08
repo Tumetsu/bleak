@@ -34,6 +34,10 @@ module.exports = function(grunt) {
 	                src: '*',
                     cwd: 'src/fonts/',
                     expand: true
+                }, {dest: 'assets/css',
+                    src: '*',
+                    cwd: 'src/css/',
+                    expand: true
                 }]
 	        },
 	        dist: {
@@ -42,7 +46,11 @@ module.exports = function(grunt) {
 	                src: '*',
                     cwd: 'src/fonts/',
                     expand: true
-                }]		        
+                }, {dest: 'assets/css',
+                    src: '*',
+                    cwd: 'src/css/',
+                    expand: true
+                }]
 	        } 
         },
         clean: {
