@@ -4,8 +4,8 @@ jQuery(function($) {
 	var body = $('body');
 
 	/* ==========================================================================
-	   Menu Function
-	   ========================================================================== */
+	 Menu Function
+	 ========================================================================== */
 
 	body.on('click', '[data-action="menu"]', function() {
 		var action = $(this).data('action');
@@ -42,13 +42,13 @@ jQuery(function($) {
 	});
 
 	/* ==========================================================================
-	   Current Menu Item
-	   ========================================================================== */
+	 Current Menu Item
+	 ========================================================================== */
 
 	/*
-		Actually this should be handled by GHost itself, but the {{current}} handler doesn't
-		work as aspected everytime so I add this little FUnction to fix this on the client side.
-	*/
+	 Actually this should be handled by GHost itself, but the {{current}} handler doesn't
+	 work as aspected everytime so I add this little FUnction to fix this on the client side.
+	 */
 
 	function currentMenuFix() {
 		$('.menu-list-item a').each(function() {
@@ -62,8 +62,8 @@ jQuery(function($) {
 	currentMenuFix();
 
 	/* ==========================================================================
-	   Masonry
-	   ========================================================================== */
+	 Masonry
+	 ========================================================================== */
 
 	function grid() {
 		$('.post-list .post .post-image img').each(function() {
@@ -74,7 +74,7 @@ jQuery(function($) {
 					'padding-bottom' : 100 / img.width() * img.height() + '%'
 				});
 			});
-	    });
+		});
 		var postlist = $('.post-list').masonry({
 			itemSelector			: '.post',
 			isAnimated				: false,
@@ -88,8 +88,8 @@ jQuery(function($) {
 	grid();
 
 	/* ==========================================================================
-	   Run Highlight
-	   ========================================================================== */
+	 Run Highlight
+	 ========================================================================== */
 
 	function highlight() {
 		$('pre code').each(function(i, e) {
@@ -106,8 +106,8 @@ jQuery(function($) {
 	highlight();
 
 	/* ==========================================================================
-	   Fitvids
-	   ========================================================================== */
+	 Fitvids
+	 ========================================================================== */
 
 	function video() {
 		$('#wrapper').fitVids();
@@ -115,8 +115,8 @@ jQuery(function($) {
 	video();
 
 	/* ==========================================================================
-	   Initialize and load Disqus
-	   ========================================================================== */
+	 Initialize and load Disqus
+	 ========================================================================== */
 
 	function comments() {
 		if (typeof disqus === 'undefined' || !document.getElementById('disqus_thread')) {
@@ -145,8 +145,8 @@ jQuery(function($) {
 	comments();
 
 	/* ==========================================================================
-	   Reading Time
-	   ========================================================================== */
+	 Reading Time
+	 ========================================================================== */
 
 	function readingTime() {
 		// Don't execute on the front page
@@ -168,8 +168,8 @@ jQuery(function($) {
 	readingTime();
 
 	/* ==========================================================================
-	   Reload all scripts after AJAX load
-	   ========================================================================== */
+	 Reload all scripts after AJAX load
+	 ========================================================================== */
 
 	function reload() {
 		grid();
@@ -182,8 +182,8 @@ jQuery(function($) {
 	}
 
 	/* ==========================================================================
-	   Add class for ajax loading
-	   ========================================================================== */
+	 Add class for ajax loading
+	 ========================================================================== */
 
 	function ajaxLinkClass() {
 
@@ -214,8 +214,8 @@ jQuery(function($) {
 	ajaxLinkClass();
 
 	/* ==========================================================================
-	   Ajax Loading
-	   ========================================================================== */
+	 Ajax Loading
+	 ========================================================================== */
 
 	var History = window.History;
 	var loading = false;
@@ -233,7 +233,7 @@ jQuery(function($) {
 			var newContent = $('#ajax-container', $html).contents();
 			var title = result.match(/<title>(.*?)<\/title>/)[1];
 
-			ajaxContainer.fadeOut(500, function() {
+			ajaxContainer.fadeOut(200, function() {
 				if(html.hasClass('push-next')) {
 					html.removeClass('push-next');
 					html.addClass('pushed-next');
@@ -247,7 +247,7 @@ jQuery(function($) {
 				body.removeClass();
 				body.addClass($('#body-class').attr('class'));
 				NProgress.done();
-				ajaxContainer.fadeIn(500);
+				ajaxContainer.fadeIn(200);
 				$(document).scrollTop(0);
 				setTimeout(function() {
 					html.removeClass('loading');
@@ -258,7 +258,7 @@ jQuery(function($) {
 		});
 	});
 	$('body').on('click', '.js-ajax-link', function(e) {
-	    e.preventDefault();
+		e.preventDefault();
 
 		var link = $(this);
 
@@ -276,18 +276,18 @@ jQuery(function($) {
 			html.removeClass('pushed-prev');
 		}
 
-	    if (loading === false) {
+		if (loading === false) {
 			var currentState = History.getState();
 			var url = $(this).prop('href');
 			var title = $(this).attr('title') || null;
 
-	        if (url.replace(/\/$/, "") !== currentState.url.replace(/\/$/, "")) {
+			if (url.replace(/\/$/, "") !== currentState.url.replace(/\/$/, "")) {
 				loading = true;
 				html.addClass('loading');
 				NProgress.start();
 				History.pushState({}, title, url);
-	        }
-	    }
+			}
+		}
 	});
 
 	$('body').on('click', '#post-index .post .js-ajax-link', function() {
